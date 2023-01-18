@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [ "es6" ],
+    "module": "commonjs",
+    "outDir": "dist",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "allowJs": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    // "types": ["node"], // Necessaro para rodar seed e migration, mas tirar ao buildar ou run dev
+    "typeRoots": ["./@types"]
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
