@@ -1,16 +1,24 @@
 import { connection } from "../database/database";
 
+interface Books {
+  id: number,
+  name: string,
+  active: boolean,
+  author: number,
+  created_at: Date
+}
+
 export default {
   findByName: async (name: string) => {
-    return connection.query('SELECT * FROM books WHERE name=$1', [name]);
+    return connection.query<Books>('SELECT * FROM books WHERE name=$1', [name]);
   },
 
   findById: async (id: string) => {
-    return connection.query('SELECT * FROM books WHERE id=$1', [id]);
+    return connection.query<Books>('SELECT * FROM books WHERE id=$1', [id]);
   },
 
   findAll: async () => {
-    return connection.query('SELECT * FROM books');
+    return connection.query<Books>('SELECT * FROM books');
   },
 
   insertBook: async (name: string, authorId: number) => {
